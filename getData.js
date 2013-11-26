@@ -13,6 +13,7 @@ while (i--) {
         title = encodeURI(listResponse.query.random[i].title);
         request("http://en.wikipedia.org/wiki/" +  title, function (error, response, body) {
           data.push($('ol.references', body).children().length);
+          console.log($('ol.references', body).children().length);
         });
       }
     }
