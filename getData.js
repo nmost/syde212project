@@ -45,7 +45,11 @@ async.parallel(pageRequests, function(err, requests) {
  
 function output(numbers) {
   console.log(numbers);
+  var csvArray = []
+  for (var i = 0; i < numbers.length; i++) {
+    csvArray.push([numbers[i]]);
+  }
   csv()
-  .from.array(numbers)
+  .from.array(csvArray)
   .to.stream(fs.createWriteStream(__dirname+'/data.csv'));
 }
