@@ -7,9 +7,12 @@ var async = require("async");
 var pageRequests = [];
 var i = 100;
 
+// Directs to a random wikipedia page
+var requestedPage="http://en.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=10";
+
 while (i--) {
   pageRequests.push(function(cb) {
-    request("http://en.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=10", function (error, response, body) {
+    request(requestedPage, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         var listResponse = JSON.parse(body);
         var title;
