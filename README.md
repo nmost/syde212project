@@ -1,11 +1,5 @@
-SYDE 212 project
+SYDE 212 Project
 ==============
-
-Vic Vu
-Deep Jani
-Adam Wootton
-Nick Mostowich
-
 
 ## What is it
 
@@ -15,3 +9,13 @@ Of course, doing this manually would take a large amount of work, so we've devel
 We are going to compare the number of references for random articles in multiple languages (just french and english for now), and draw our conclusions from the gathered data.
 
 
+## Who?
+
+
+* Deep Jani
+
+* Adam Wootton
+
+* Nick Mostowich
+
+* Victor Vucicevich
