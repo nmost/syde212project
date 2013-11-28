@@ -8,7 +8,7 @@ var pageRequests = [];
 var i = 100;
 
 // Directs to a random wikipedia page
-var requestedPage="http://en.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=10";
+var requestedPage="http://simple.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=10";
 
 while (i--) {
   pageRequests.push(function(cb) {
@@ -22,7 +22,7 @@ while (i--) {
           title = encodeURI(listResponse.query.random[a].title);
           (function (urlTitle) {
             requests.push(function(callback) {
-              request("http://en.wikipedia.org/wiki/" +  urlTitle, function (error, response, body) {
+              request("http://simple.wikipedia.org/wiki/" +  urlTitle, function (error, response, body) {
                 callback(null, $('ol.references', body).children().length);
               });
             });
@@ -54,5 +54,5 @@ function output(numbers) {
   }
   csv()
   .from.array(csvArray)
-  .to.stream(fs.createWriteStream(__dirname+'/data.csv'));
+  .to.stream(fs.createWriteStream(__dirname+'/simple.csv'));
 }
